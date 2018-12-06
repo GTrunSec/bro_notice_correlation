@@ -26,11 +26,11 @@ export {
 #  	 	Test::HTTP_Header_Alert_with_src
   	} &redef;
 
-  global watch_hosts: table[addr] of table[Notice::Type] of count &write_expire = 120 min &synchronized;
-  global watch_host: function(whost: addr, n: Notice::Info);
+global watch_hosts: table[addr] of table[Notice::Type] of count &write_expire = 120 min;
+global watch_host: function(whost: addr, n: Notice::Info);
 
-  # single notice threshold
-  type SNT: record {
+# single notice threshold
+type SNT: record {
        thres: count;
        block: bool;
        blockthres: count;
